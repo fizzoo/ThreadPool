@@ -54,6 +54,10 @@ public:
   bool done();
 };
 
+////////////////////////
+//   IMPLEMENTATION   //
+////////////////////////
+
 void ThreadPool::thread_entry() {
   std::function<void()> job;
   while (true) {
