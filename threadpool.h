@@ -20,7 +20,7 @@ private:
   /**
    * For each thread; fetches and runs a task, or waits.
    */
-  void thread_entry();
+  inline void thread_entry();
 
   ThreadPool(ThreadPool const &rhs) = delete;
   ThreadPool(ThreadPool &&rhs) = delete;
@@ -31,27 +31,27 @@ public:
   /**
    * CTOR creates threads, defaults to 0 -> detection of cpus.
    */
-  ThreadPool(unsigned = 0);
+  inline ThreadPool(unsigned = 0);
 
   /**
    * DTOR waits for completion of all tasks.
    */
-  ~ThreadPool();
+  inline ~ThreadPool();
 
   /**
    * Enqueues a task.
    */
-  void operator()(std::function<void()>);
+  inline void operator()(std::function<void()>);
 
   /**
    * Continuously sleeps until done() is true.
    */
-  void wait_until_done();
+  inline void wait_until_done();
 
   /**
    * Returns whether all tasks are finished.
    */
-  bool done();
+  inline bool done();
 };
 
 ////////////////////////
