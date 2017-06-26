@@ -4,3 +4,4 @@ default:
 
 install:
 		cp threadpool.h /usr/local/include/
+		chmod a+r /usr/local/include/threadpool.h
